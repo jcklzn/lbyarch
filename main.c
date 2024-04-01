@@ -4,22 +4,24 @@
 #include <windows.h>
 #include <malloc.h>
 
-double dot_product_c(double* A, double* B, int n) {
-    double result = 0.0;
+void dot_product_c(double* A, double* B, int n, double* Sdot_c) {
+    double sdot = 0;
     for (int i = 0; i < n; i++) {
-        result += A[i] * B[i];
+        sdot += (double)A[i] * B[i];
     }
-    return result;
-};
+    *Sdot_c = (float)sdot;
+}
 
 extern void asmfunc(double* A, double* B, int n, double* Sdot_asm);
 
 int main() {
-    int i = 20; // change as necessary
+    int i = 28; // change as necessary
     int n = 1 << i;
     double* A = (double*)_aligned_malloc(n * sizeof(double), 32);
     double* B = (double*)_aligned_malloc(n * sizeof(double), 32);
     double Sdot_asm;
+    double Sdot_c;
+
     if (A == NULL || B == NULL) {
         printf("Memory allocation failed.\n");
         return 1; // Exit the program with an error code
@@ -34,12 +36,12 @@ int main() {
     QueryPerformanceFrequency(&frequency);
 
     QueryPerformanceCounter(&start);
-    double result_c = dot_product_c(A, B, n);
+    dot_product_c(A, B, n, &Sdot_c);
     QueryPerformanceCounter(&end);
     double time_c = (end.QuadPart - start.QuadPart) / (double)frequency.QuadPart;
 
     printf("Vector size: 2^%d\n", i);
-    printf("Dot product result (C): %lf\n", result_c);
+    printf("Dot product result (C): %lf\n", Sdot_c);
     printf("Dot product time (C): %lf\n", time_c);
 
 

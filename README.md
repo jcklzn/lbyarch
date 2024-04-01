@@ -4,12 +4,12 @@ by: Jack Elinzano
 ## Average Execution Time 
 | Kernel          | C Implementation | Assembly Implementation |
 |-----------------|------------------|-------------------------|
-| Debug Mode (2^20) | Result 1         | Result 1                |
-| Release Mode (2^20) | Result 2         | Result 2                |
-| Debug Mode (2^24) | Result 1         | Result 1                |
-| Release Mode (2^24) | Result 2         | Result 2                |
-| Debug Mode (2^28) | Result 1         | Result 1                |
-| Release Mode (2^28) | Result 2         | Result 2                |
+| Debug Mode (2^20) | 0.0023458        | 0.0010892                |
+| Release Mode (2^20) | 0.0015138         | 0.0015682                |
+| Debug Mode (2^24) | 0.0360498         | 0.0168895                |
+| Release Mode (2^24) | 0.0149568         | 0.0153126               |
+| Debug Mode (2^28) | 4.3060264         | 1.6599135                |
+| Release Mode (2^28) | 3.032059         | 2.0692571                |
 
 ## Analysis of Results
 ASM is faster \# is not becoming a header

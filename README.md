@@ -1,3 +1,4 @@
+#Execution Time Comparison
 | Time (s) | Entry |
 |----------|-------|
 | 1        | 1     |

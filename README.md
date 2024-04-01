@@ -12,4 +12,4 @@ by: Jack Elinzano
 | Release Mode (2^28) | 3.032059         | 2.0692571                |
 
 ## Analysis of Results
-ASM is faster \# is not becoming a header
+ASM is faster for any implementation and any run for Debug mode. However, for Release mode, C implementation became drastically faster while assembly became quite inconsistent and was even slower than C in some tests. 

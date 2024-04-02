@@ -1,5 +1,6 @@
 # Dot Product in C and Assembly
 by: Jack Elinzano
+
 This program tests an integer n as input and vectors A and B of the length (n) which are both double-precision float numbers. The c and assembly functions then solve the dot product of the two vectors and their execution time is printed along with the dot product of the vector. 
 
 ## Average Execution Time 

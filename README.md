@@ -13,3 +13,10 @@ by: Jack Elinzano
 
 ## Analysis of Results
 ASM is faster for any implementation and any run for Debug mode. However, for Release mode, C implementation became drastically faster while assembly became quite inconsistent and was even slower than C in some tests. 
+
+Debug | Release
+--- | ---
+![Debug 2^20](debug_20.png) | ![Release 2^20](release_20.png)
+![Debug 2^24](debug_24.png) | ![Release 2^24](release_24.png)
+![Debug 2^28](debug_28.png) | ![Release 2^28](release_28.png)
+
